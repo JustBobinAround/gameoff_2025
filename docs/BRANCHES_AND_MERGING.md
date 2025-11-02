@@ -49,4 +49,7 @@ When you are done with a full feature, run `git push` and then go to the followi
 You will be presented with the following page:
 ![pull_request_example](./pull_request_example.png)
 
-Select **master** for base and the your branch for **compare**.
+Select **master** for base and the your branch for **compare**. Then click **Create Pull Request**. You will then see the following:
+![pull_request_desc_example](./pull_request_desc_example.png)
+
+Write a simple description of the feature that you have added and then once again click **Create Pull Request**.
