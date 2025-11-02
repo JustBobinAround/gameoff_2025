@@ -6,6 +6,8 @@ import { DungeonGameLoop } from './scenes/DungeonGameLoop.js';
 import { GameOver } from './scenes/GameOver.js';
 import { MainMenu } from './scenes/MainMenu.js';
 import { Preloader } from './scenes/Preloader.js';
+import { StartingDialog } from './scenes/StartingDialog.js';
+import { SmokeColorPipeline } from './shaders/Smoke.js';
 
 //  Find out more information about the Game Config at:
 //  https://newdocs.phaser.io/docs/3.70.0/Phaser.Types.Core.GameConfig
@@ -26,7 +28,8 @@ const config = {
         Preloader,
         MainMenu,
         DungeonGameLoop,
-        GameOver
+        GameOver,
+        StartingDialog
     ],
     physics: {
         default: 'matter',
@@ -35,6 +38,7 @@ const config = {
             debug: false
         }
     },
+    pipeline: { SmokeColorPipeline }
 };
 
 export default new Phaser.Game(config);
