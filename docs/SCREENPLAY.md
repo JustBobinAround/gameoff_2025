@@ -6,7 +6,7 @@
 
 Huh, where am I? I can't see. Hello?
 
-[UNKNOWN VOICE]
+[UNKNOWN VOICE - SMOKE DEMON]
 
 Blind, deaf, and perhaps dumb although not mute. Silly human...
 
@@ -14,9 +14,9 @@ Blind, deaf, and perhaps dumb although not mute. Silly human...
 
 I don't know who you are or what kind of joke this is, but can you please turn the lights on?
 
-[UNKNOWN VOICE]
+[UNKNOWN VOICE - SMOKE DEMON]
 
-Oh... So someone can finally hear me after all these years. And to think it
+Oh... So someone can finally hear me after all these years! And to think it
 would be a child like you. Figures.
 
 There are no lights in a place like this. Although you being able to hear me has
@@ -25,9 +25,9 @@ to be close.
 
 [PLAYER]
 
-Fine! Just tell me how to leave this place!
+Ok well can you just tell me how to leave this place?
 
-[UNKNOWN VOICE]
+[UNKNOWN VOICE - SMOKE DEMON]
 
 *Sigh...* You'll wake up soon enough.
 
@@ -40,10 +40,6 @@ Wait how do you know Emma?
 *click*
 
 ## Setting: Player Wakes Up in their room within their parents house
-
-[PLAYER]
-
-What a strange dream.
 
 [MOM]
 
@@ -84,7 +80,7 @@ Unknown character steals the **Dauerlicht** and everything switches to darkness.
 
 ### If Player goes first - Player is killed and greeted by the unknown voice:
 
-[UNKNOWN VOICE]
+[UNKNOWN VOICE - SMOKE DEMON]
 
 See, this is why you should listen to me. Nothing good ever happens otherwise...
 
@@ -109,7 +105,7 @@ I give you the title of scavenger. You are to retrieve the *Dauerlicht* at all c
 
 *Elder dies*
 
-[UNKNOWN VOICE]
+[UNKNOWN VOICE - SMOKE DEMON]
 
 This isn't looking too good. You see that alter up there. Your elders might not
 know it, but those are the heart of a dungeon layer. It can let us get to the
@@ -121,7 +117,7 @@ this mess.
 
 ### Once player wins - Portal opens.
 
-[UNKNOWN VOICE]
+[UNKNOWN VOICE - SMOKE DEMON]
 That was easy enough. We need to go after the *Dauerlicht*. Like your elder
 said, without it, this town will die. I'll keep the portal open, you go ahead and
 get anything you need. Its going to be a long journey to the overworld.
@@ -129,19 +125,19 @@ get anything you need. Its going to be a long journey to the overworld.
 [PLAYER]
 Why are you helping me?
 
-[UNKNOWN VOICE]
+[UNKNOWN VOICE - SMOKE DEMON]
 I haven't had someone that could hear or see me for decades. Its just nice to
 be able to finally talk to someone again.
 
 [PLAYER]
 ...
 
-[UNKNOWN VOICE]
+[UNKNOWN VOICE - SMOKE DEMON]
 Come on, I've helped you so far. Now hurry up, I can't keep this thing open forever.
 
 ### Player enters portal
 
-[UNKNOWN VOICE]
+[UNKNOWN VOICE - SMOKE DEMON]
 So here's the thing. I'd say we're at least 20 levels below the overworld. Each
 level we need to find one of those alters like the one you saw in the hall of
 elders. The quicker we find each alter and beat the waves it makes, the quicker
