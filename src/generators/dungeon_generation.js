@@ -1,4 +1,22 @@
-import init, { find_paths } from "./libs/wasm/path_finder.js";
+import init, { find_paths } from '../../../libs/wasm/path_finder.js';
+
+function build_new_array(w,h,mapping_closure) {
+    var new_array = [];
+    for(var j = 0; j < h; j++) {
+        new_array.push([]);
+        for(var i = 0; i < w; i++) {
+            mapping_closure(i,j,array);
+        }
+    }
+}
+
+function map_2D_as_mut(mutable_array, mapping_closure) {
+    for(var j = 0; j < mutable_array.length; j++) {
+        for(var i = 0; i < mutable_array[j].length; i++) {
+            mapping_closure(i, j, mutable_array);
+        }
+    }
+}
 
 export async function calculate_paths(world) {
     await init();
