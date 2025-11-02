@@ -1,5 +1,8 @@
 # GAMEOFF 2025
 
+## IMPORTANT NOTE
+**PLEASE USE RELATIVE LINKS FOR EVERYTHING AS WE WANT GITHUB PAGES TO BE FUNCTIONAL FOR END USER TESTING**
+
 ## Dev Requirements
 
 [Node.js](https://nodejs.org) is required to install dependencies and run
