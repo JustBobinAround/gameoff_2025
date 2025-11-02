@@ -1,4 +1,4 @@
-import init, { find_paths } from '../../../libs/wasm/path_finder.js';
+import init, { find_paths } from '../../libs/wasm/path_finder.js';
 
 function build_new_array(w,h,mapping_closure) {
     var new_array = [];
