@@ -46,4 +46,7 @@ git commit -m "ADD SOME MESSAGE HERE"
 
 When you are done with a full feature, run `git push` and then go to the following link in your browser: [https://github.com/JustBobinAround/gameoff_2025/compare](https://github.com/JustBobinAround/gameoff_2025/compare)
 
-You will be presented with the following page
+You will be presented with the following page:
+![pull_request_example](./pull_request_example.png)
+
+Select **master** for base and the your branch for **compare**.
