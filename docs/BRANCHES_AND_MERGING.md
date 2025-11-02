@@ -53,3 +53,8 @@ Select **master** for base and the your branch for **compare**. Then click **Cre
 ![pull_request_desc_example](./pull_request_desc_example.png)
 
 Write a simple description of the feature that you have added and then once again click **Create Pull Request**.
+
+You will then see a page like so:
+![open_pull_request_example](./open_pull_request_example.png)
+
+If there are no merge conflicts, just go ahead and click **Merge Pull Request**. If there are merge conflicts, grab me on discord.
