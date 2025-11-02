@@ -15,7 +15,7 @@ import {
     get_player_spawn,
     calc_torch_placements,
     cord
-} from "/src/generators/dungeon_generation.js";
+} from "../generators/dungeon_generation.js";
 
 export class DungeonGameLoop extends Scene {
     constructor () {
