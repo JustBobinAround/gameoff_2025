@@ -9,22 +9,31 @@ import { Preloader } from './scenes/Preloader.js';
 //  Find out more information about the Game Config at:
 //  https://newdocs.phaser.io/docs/3.70.0/Phaser.Types.Core.GameConfig
 const config = {
-    type: Phaser.AUTO,
+    type: Phaser.WEBGL,
     width: 1024,
     height: 768,
     parent: 'game-container',
-    backgroundColor: '#028af8',
+    backgroundColor: '#000000',
     scale: {
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH
     },
+    maxLights: 15,
+    pixelArt: true,
     scene: [
         Boot,
         Preloader,
         MainMenu,
         Game,
         GameOver
-    ]
+    ],
+    physics: {
+        default: 'matter',
+        matter: {
+            gravity: { y: 0 },
+            debug: false
+        }
+    },
 };
 
 export default new Phaser.Game(config);
