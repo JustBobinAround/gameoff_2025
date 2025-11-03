@@ -4,11 +4,11 @@
 
 [PLAYER]
 
-Huh, where am I? I can't see. Hello?
+Huh, where am I? I can't see. Its so dark. Hello?
 
 [UNKNOWN VOICE - SMOKE DEMON]
 
-Blind, deaf, and perhaps dumb although not mute. Silly human...
+Can’t see, can’t hear, but still voicing its opinions. Typical human...
 
 [PLAYER]
 
