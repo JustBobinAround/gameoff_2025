@@ -6,7 +6,6 @@ import { DungeonGameLoop } from './scenes/DungeonGameLoop.js';
 import { GameOver } from './scenes/GameOver.js';
 import { MainMenu } from './scenes/MainMenu.js';
 import { Preloader } from './scenes/Preloader.js';
-import { StartingDialog } from './scenes/StartingDialog.js';
 import { SmokeColorPipeline } from './shaders/Smoke.js';
 
 //  Find out more information about the Game Config at:
@@ -29,7 +28,6 @@ const config = {
         MainMenu,
         DungeonGameLoop,
         GameOver,
-        StartingDialog
     ],
     physics: {
         default: 'matter',
