@@ -142,6 +142,24 @@ export function upscale_world(world) {
   return result;
 }
 
+export function upscale_world_2(world) {
+  var rows = world.length;
+  var cols = world[0].length;
+  var result = [];
+
+  for (let i = 0; i < rows; i++) {
+    var new_row_1 = [];
+    for (let j = 0; j < cols; j++) {
+      var val = world[i][j];
+      // Each cell becomes a 2x2 block
+      new_row_1.push(val, val);
+    }
+    result.push(new_row_1);
+  }
+
+  return result;
+}
+
 export function clean_world(root_cords, world) {
     for(var j = 1; j < world.length - 1; j++) {
         for(var i = 1; i < world[j].length-1; i++) {
