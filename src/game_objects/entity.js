@@ -93,6 +93,12 @@ export class Entity extends GameObjects.Container {
           this.end_str_cord = false;
           return;
         }
+        if(!paths[this.end_str_cord]) {
+          return;
+        }
+        if(!paths[this.end_str_cord][current_str_cord]) {
+          return;
+        }
         var action = paths[this.end_str_cord][current_str_cord];
         
         var next_tile_x = current_tile_x;
@@ -108,7 +114,7 @@ export class Entity extends GameObjects.Container {
         }
         var next_cord_x = grid_map.tileToWorldX(next_tile_x);
         var next_cord_y = grid_map.tileToWorldY(next_tile_y);
-        this.set_goto_cord(cord((next_tile_x*64)-32,(next_tile_y*64)+32));
+        this.set_goto_cord(cord((next_tile_x*64)-32,(next_tile_y*128)+64));
       }
       if(this.current_dash_amount>0) {
         this.current_dash_amount -= this.dash_deceleration;
