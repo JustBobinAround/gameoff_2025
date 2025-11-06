@@ -4,3 +4,5 @@ serve:
 install:
 	npm install
 
+tiled:
+	nohup tiled &

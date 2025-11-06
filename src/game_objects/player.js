@@ -31,7 +31,9 @@ class Player extends Entity {
             //y++
             this.move_down();
         }
-        super.update(scene, grid_map, paths);
+        if(grid_map && paths) {
+            super.update(scene, grid_map, paths);
+        }
         this.light.setPosition(this.x, this.y);
     }
 
