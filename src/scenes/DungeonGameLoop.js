@@ -52,10 +52,8 @@ export class DungeonGameLoop extends Scene {
         
         this.input.on('pointerdown', function (pointer) {
             if (!pointer.leftButtonDown()) return;
-
-
+            
             const { x, y } = pointer.position;
-
 
             const tile_x = grid_map.worldToTileX(pointer.worldX);
             const tile_y = grid_map.worldToTileY(pointer.worldY);
@@ -223,7 +221,7 @@ export class DungeonGameLoop extends Scene {
         // world = upscale_world_2(world);
         const player_spawn = get_player_spawn(world);
 
-        this.player = new Player(this, player_spawn.x*64, player_spawn.y*64);
+        this.player = new Player(this, player_spawn.x*64, player_spawn.y*128);
 
         // this.shadowPipline = this.renderer.pipelines.add('SmokeColor', new ShadowPipeline(this.game));
         // this.shadowPipline.set3f('shadowColor', 0.1, 0.05, 0.0);

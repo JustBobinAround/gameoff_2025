@@ -38,7 +38,7 @@ export class MainMenu extends Scene {
 
     build_dialog() {
         var on_close = (scene) => {
-            scene.scene.start('DungeonGameLoop');
+            scene.scene.start('PlayersHouse');
         };
         
         this.popup_dialog = new PopupDialog(this, [
