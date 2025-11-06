@@ -30,6 +30,12 @@ export class Town extends Scene {
       const layer2 = map.createLayer(2, town_wall_tiles, 0, 0);
       const layer3 = map.createLayer(3, cabin_tiles, 0, 0);
       const layer4 = map.createLayer(4, canal_tiles, 0, 0);
+
+      layer0.setPipeline('Light2D');
+      layer1.setPipeline('Light2D');
+      layer2.setPipeline('Light2D');
+      layer3.setPipeline('Light2D');
+      layer4.setPipeline('Light2D');
       
       this.player = new Player(this, 15*64, 15*128);
 

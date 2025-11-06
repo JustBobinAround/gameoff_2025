@@ -7,6 +7,8 @@ export class HallOfElders extends Scene {
     }
 
     preload() {
+      this.load.image("church_props", "./assets/tilesets/props/church_props.png");
+      this.load.image("church_walls", "./assets/tilesets/dungeon_walls/stone_and_iron_v2.png");
       this.load.image("hall_of_elders_floor", "./assets/tilesets/floor_textures/hall_of_elders_floor.png");
       this.load.tilemapTiledJSON('hall_of_elders', './assets/scene_maps/hall_of_elders.tmj');
     }
@@ -14,7 +16,18 @@ export class HallOfElders extends Scene {
     create() {
       const map = this.make.tilemap({ key: 'hall_of_elders' });
       const floor_tiles = map.addTilesetImage('hall_of_elders_floor', 'hall_of_elders_floor');
+      const wall_tiles = map.addTilesetImage('stone_and_iron_v2', 'church_walls');
+      const prop_tiles = map.addTilesetImage('church_props', 'church_props');
+      
       const layer0 = map.createLayer(0, floor_tiles, 0, 0);
+      const layer1 = map.createLayer(1, wall_tiles, 0, 0);
+      const layer2 = map.createLayer(2, wall_tiles, 0, 64);
+      const layer3 = map.createLayer(3, prop_tiles, 0, 0);
+      
+      layer0.setPipeline('Light2D');
+      layer1.setPipeline('Light2D');
+      layer2.setPipeline('Light2D');
+      layer3.setPipeline('Light2D');
       
       this.player = new Player(this, 0, 0);
 
