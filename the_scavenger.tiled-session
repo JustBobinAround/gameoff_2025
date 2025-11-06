@@ -5,15 +5,19 @@
     },
     "activeFile": "assets/scene_maps/hall_of_elders.tmj",
     "expandedProjectPaths": [
+        "assets",
         "assets/scene_maps",
-        "assets/tilesets",
-        "assets/tilesets/dungeon_walls",
         ".",
-        "assets/tilesets/floor_textures",
         "assets/tilesets/city_walls",
-        "assets"
+        "assets/tilesets/dungeon_walls",
+        "assets/tilesets/floor_textures",
+        "assets/tilesets"
     ],
     "fileStates": {
+        "": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
         "assets/scene_maps/assets/tilesets/dungeon_walls/stone_and_iron_v2.tsx": {
             "scaleInDock": 1
         },
@@ -21,17 +25,26 @@
             "scaleInDock": 1
         },
         "assets/scene_maps/hall_of_elders.tmj": {
-            "scale": 3,
-            "selectedLayer": 0,
+            "scale": 0.75,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 805.3333333333333,
-                "y": 567.5
+                "x": 1584,
+                "y": 2063.333333333333
             }
+        },
+        "assets/scene_maps/hall_of_elders.tmj#church_pew": {
+            "scaleInDock": 1
+        },
+        "assets/scene_maps/hall_of_elders.tmj#church_props": {
+            "scaleInDock": 1
         },
         "assets/scene_maps/hall_of_elders.tmj#hall_of_elders_floor": {
             "scaleInDock": 1
         },
         "assets/scene_maps/hall_of_elders.tmj#obolisk": {
+            "scaleInDock": 1
+        },
+        "assets/scene_maps/hall_of_elders.tmj#stone_and_iron_v2": {
             "scaleInDock": 1
         },
         "assets/scene_maps/player_cabin.tmj": {
@@ -132,7 +145,7 @@
     },
     "last.exportedFilePath": "/home/WORK/projects/gameoff_2025/assets/scene_maps",
     "last.externalTilesetPath": "/home/WORK/projects/gameoff_2025/assets/tilesets/dungeon_walls",
-    "last.imagePath": "/home/WORK/projects/gameoff_2025/assets/tilesets/dungeon_walls",
+    "last.imagePath": "/home/WORK/projects/gameoff_2025/assets/tilesets/props",
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "json",
     "map.tileHeight": 128,
