@@ -83,6 +83,9 @@ export class PlayersHouse extends Scene {
       
       layer0.setPipeline('Light2D');
       layer1.setPipeline('Light2D');
+      // layer1.setCollisionByProperty({collides: true});
+      layer1.setCollisionByExclusion([12, 6]);
+      this.matter.world.convertTilemapLayer(layer1);
       layer2.setPipeline('Light2D');
       layer3.setPipeline('Light2D');
       

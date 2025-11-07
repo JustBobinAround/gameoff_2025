@@ -5,7 +5,7 @@ import { to_str_cord, from_str_cord, cord} from '../generators/dungeon_generatio
 export class Entity extends GameObjects.Container {
     constructor(scene, x, y) {
         super(scene, x, y);
-        this.setSize(64, 64);
+        this.setSize(50, 50);
         const rect = scene.add.rectangle(0, 0, 64, 64, 0x00ff00);
         this.add(rect);
         this.rect = rect;
