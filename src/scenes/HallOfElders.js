@@ -31,7 +31,7 @@ export class HallOfElders extends Scene {
       layer3.setPipeline('Light2D');
       layer4.setPipeline('Light2D');
       
-      this.player = new Player(this, 0, 0);
+      this.player = new Player(this, 14*64, 12*128);
 
       this.cursors = this.input.keyboard.createCursorKeys();
       this.wasd = {
@@ -43,14 +43,14 @@ export class HallOfElders extends Scene {
       this.cameras.main.startFollow(this.player);
     }
 
-    check_exit_bounds(y) {
-      return y>820;
+    should_return_to_town(y) {
+      return y>14*128;
     }
     
     update(time) {
       this.player.update(this, this.grid_map, this.paths);
-      if(this.check_exit_bounds(this.player.y)) {
-        this.scene.start('DungeonGameLoop');
+      if(this.should_return_to_town(this.player.y)) {
+        this.scene.start('Town', {from: 'HallOfElders'});
       }
     }
 }
