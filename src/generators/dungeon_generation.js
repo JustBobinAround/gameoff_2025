@@ -76,6 +76,32 @@ export function gen_world(root_cords, unused, world) {
     }
 }
 
+function is_front_wall(tile_code) {
+    return tile_code==4
+        || tile_code==7
+        || tile_code==8
+        || tile_code==9
+        || tile_code==10
+        || tile_code==14
+        || tile_code==15;
+}
+export function calc_display_tiles_lv2(display_tiles) {
+    var display = [];
+    console.log(display_tiles);
+    for(var j = 0; j<display_tiles.length; j++) {
+        display.push([]);
+        for(var i = 0; i < display_tiles[j].length; i++) {
+            if(is_front_wall(display_tiles[j][i])) {
+                display[j].push(display_tiles[j][i]);
+            } else {
+                display[j].push(12);
+            }
+        }
+    }
+
+    return display;
+}
+
 export function calc_display_tiles(world) {
     var mask_map = gen_mask_map();    
     var edge_cases = gen_mask_map_edge_case();

@@ -7,17 +7,22 @@ export class PlayersHouse extends Scene {
     }
 
     preload() {
-      this.load.image("cabin_walls", "./assets/tilesets/city_walls/player_cabin.png");
-      this.load.image("cabin_floors", "./assets/tilesets/floor_textures/player_cabin_floor.png");
+      this.load.image("cabin_walls", "./assets/tilesets/dungeon_walls/stone_and_iron_v2.png");
+      this.load.image("cabin_floors", "./assets/tilesets/floor_textures/hall_of_elders_floor.png");
       this.load.tilemapTiledJSON('map', './assets/scene_maps/player_cabin.tmj');
     }
 
     create() {
       const map = this.make.tilemap({ key: 'map' });
-      const wall_tiles= map.addTilesetImage('player_cabin_walls', 'cabin_walls');
-      const floor_tiles = map.addTilesetImage('player_cabin', 'cabin_floors');
+      const wall_tiles= map.addTilesetImage('stone_and_iron_v2', 'cabin_walls');
+      const floor_tiles = map.addTilesetImage('hall_of_elders_floor', 'cabin_floors');
       const layer0 = map.createLayer(0, floor_tiles, 0, 0);
       const layer1 = map.createLayer(1, wall_tiles, 0, 0);
+      const layer2 = map.createLayer(2, wall_tiles, 0, 64);
+      
+      layer0.setPipeline('Light2D');
+      layer1.setPipeline('Light2D');
+      layer2.setPipeline('Light2D');
       
       this.player = new Player(this, 0, 0);
 

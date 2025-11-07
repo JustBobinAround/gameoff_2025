@@ -37,7 +37,7 @@ export class Town extends Scene {
       layer3.setPipeline('Light2D');
       layer4.setPipeline('Light2D');
       
-      this.player = new Player(this, 15*64, 15*128);
+      this.player = new Player(this, 5*64, 5*128);
 
       this.cursors = this.input.keyboard.createCursorKeys();
       this.wasd = {
