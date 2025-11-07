@@ -5,7 +5,10 @@ import { Boot } from './scenes/Boot.js';
 import { DungeonGameLoop } from './scenes/DungeonGameLoop.js';
 import { GameOver } from './scenes/GameOver.js';
 import { MainMenu } from './scenes/MainMenu.js';
+import { PlayersHouse } from './scenes/PlayersHouse.js';
 import { Preloader } from './scenes/Preloader.js';
+import { Town } from './scenes/Town.js';
+import { HallOfElders } from './scenes/HallOfElders.js';
 import { SmokeColorPipeline } from './shaders/Smoke.js';
 
 //  Find out more information about the Game Config at:
@@ -26,6 +29,9 @@ const config = {
         Boot,
         Preloader,
         MainMenu,
+        PlayersHouse,
+        Town,
+        HallOfElders,
         DungeonGameLoop,
         GameOver,
     ],

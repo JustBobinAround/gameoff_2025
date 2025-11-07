@@ -7,11 +7,13 @@ import {
     gen_world,
     clean_world,
     upscale_world,
+    upscale_world_2,
     calculate_paths,
     make_path_grid,
     from_str_cord,
     to_str_cord,
     calc_display_tiles,
+    calc_display_tiles_lv2,
     get_player_spawn,
     calc_torch_placements,
     cord
@@ -24,9 +26,9 @@ export class DungeonGameLoop extends Scene {
 
     preload() {
         this.load.image("gravel_floorset", "./assets/tilesets/floor_textures/gravel.png");
-        this.load.image("stone_and_iron_wallset", "./assets/tilesets/dungeon_walls/stone_and_iron.png");
+        this.load.image("stone_and_iron_wallset", "./assets/tilesets/dungeon_walls/stone_and_iron_v2.png");
         this.load.image("debug_arrows", "./assets/tilesets/debug/arrows.png");
-        this.load.json("collision_data", "./assets/tilesets/dungeon_walls/collision_data.json")
+        this.load.json("collision_data", "./assets/tilesets/dungeon_walls/collision_data_v2.json")
     }
 
     build_key_handler() {
@@ -36,6 +38,7 @@ export class DungeonGameLoop extends Scene {
     }
     
     build_mouse_handler(grid_map, paths) {
+        console.log(paths);
         this.grid_map = grid_map;
         this.paths = paths;
         this.input.mousePointer.motionFactor = 0.5;
@@ -50,10 +53,8 @@ export class DungeonGameLoop extends Scene {
         
         this.input.on('pointerdown', function (pointer) {
             if (!pointer.leftButtonDown()) return;
-
-
+            
             const { x, y } = pointer.position;
-
 
             const tile_x = grid_map.worldToTileX(pointer.worldX);
             const tile_y = grid_map.worldToTileY(pointer.worldY);
@@ -81,8 +82,8 @@ export class DungeonGameLoop extends Scene {
         });
     }
 
-    build_tilemap(map_data, image_name, offset_x, offset_y, collision_override=false) {
-        const map = this.make.tilemap({ data: map_data, tileWidth: 64, tileHeight: 64 });
+    build_tilemap(map_data, image_name, offset_x, offset_y, collision_override=false, w_override=64, h_override=64, layer_level=0) {
+        const map = this.make.tilemap({ data: map_data, tileWidth: w_override, tileHeight: h_override });
         const tileset= map.addTilesetImage(image_name);
         
         if(collision_override) {
@@ -93,7 +94,7 @@ export class DungeonGameLoop extends Scene {
             map.tilesets[0].tileData = parsed_tilesets.tilesets[0].tileData;
         }
         
-        const layer = map.createLayer(0, tileset , offset_x, offset_y);
+        const layer = map.createLayer(layer_level, tileset , offset_x, offset_y);
 
         return {
             map,
@@ -150,16 +151,19 @@ export class DungeonGameLoop extends Scene {
 
         var added_tiles = 10;
         var world_tilemap = calc_display_tiles(world);
+        var world_tilemap_lv2 = calc_display_tiles_lv2(world_tilemap);
         var border_tilemap = this.build_world_border(world_tilemap, added_tiles);
         var floor = this.build_floor(world);
         // var torch_tilemap = calc_torch_placements(world_tilemap);
         //
-        var { map: border_map, layer: border_layer} = this.build_tilemap(border_tilemap, 'stone_and_iron_wallset', -64*(added_tiles/2), -64*(added_tiles/2));
-        var { map: floor_map, layer: floor_layer} = this.build_tilemap(floor, 'gravel_floorset', 0, 0);
-        var { map: grid_map, layer: arrows } = this.build_tilemap(grid, "debug_arrows", -64, 0);
-        var { map: map, layer: walls} = this.build_tilemap(world_tilemap, "stone_and_iron_wallset", 0, 0, 'collision_data');
+        var { map: border_map, layer: border_layer} = this.build_tilemap(border_tilemap, 'stone_and_iron_wallset', -64*(added_tiles/2), -64*(added_tiles/2), false, 64, 128);
+        var { map: floor_map, layer: floor_layer} = this.build_tilemap(floor, 'gravel_floorset', 0, 0, false, 64,128);
+        var { map: grid_map, layer: arrows } = this.build_tilemap(grid, "debug_arrows", -64, 0, false, 64, 128);
+        var { map: map, layer: walls} = this.build_tilemap(world_tilemap, "stone_and_iron_wallset", 0, 0, 'collision_data', 64, 128);
+        var { map: map_lv2, layer: walls_lv2} = this.build_tilemap(world_tilemap_lv2, "stone_and_iron_wallset", 0, -64, false, 64, 128);
         floor_layer.setPipeline('Light2D');
         walls.setPipeline('Light2D');
+        walls_lv2.setPipeline('Light2D');
         border_layer.setPipeline('Light2D');
         // this.lights.addLight(64, 64, 280).setIntensity(2).setColor(0xffa81c);
         // this.lights.addLight(128, 128, 280).setIntensity(2).setColor(0xffa81c);
@@ -217,11 +221,11 @@ export class DungeonGameLoop extends Scene {
         var root_cords = {};
         gen_world(root_cords, unused, world);
         clean_world(root_cords, world);
-        // world = upscale_world(world);
+        world = upscale_world(world);
         world = upscale_world(world);
         const player_spawn = get_player_spawn(world);
 
-        this.player = new Player(this, player_spawn.x*64, player_spawn.y*64);
+        this.player = new Player(this, player_spawn.x*64, player_spawn.y*128);
 
         // this.shadowPipline = this.renderer.pipelines.add('SmokeColor', new ShadowPipeline(this.game));
         // this.shadowPipline.set3f('shadowColor', 0.1, 0.05, 0.0);
