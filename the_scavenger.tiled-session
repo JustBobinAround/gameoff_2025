@@ -3,15 +3,15 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "assets/scene_maps/town.tmj",
+    "activeFile": "assets/scene_maps/player_cabin.tmj",
     "expandedProjectPaths": [
-        ".",
-        "assets/tilesets/floor_textures",
-        "assets/tilesets/city_walls",
-        "assets",
         "assets/tilesets",
+        "assets",
+        "assets/tilesets/city_walls",
         "assets/scene_maps",
-        "assets/tilesets/dungeon_walls"
+        "assets/tilesets/dungeon_walls",
+        "assets/tilesets/floor_textures",
+        "."
     ],
     "fileStates": {
         "": {
@@ -28,8 +28,8 @@
             "scale": 1,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 785,
-                "y": 1625.5
+                "x": 1066,
+                "y": 927.5
             }
         },
         "assets/scene_maps/hall_of_elders.tmj#church_pew": {
@@ -49,10 +49,10 @@
         },
         "assets/scene_maps/player_cabin.tmj": {
             "scale": 1,
-            "selectedLayer": 1,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 650,
-                "y": 583.5
+                "x": 640,
+                "y": 1375.5
             }
         },
         "assets/scene_maps/player_cabin.tmj#hall_of_elders_floor": {
@@ -69,6 +69,9 @@
         "assets/scene_maps/player_cabin.tmj#stone_and_iron_v2": {
             "scaleInDock": 1
         },
+        "assets/scene_maps/player_cabin.tmj#torches": {
+            "scaleInDock": 1
+        },
         "assets/scene_maps/player_cabin.tmx": {
             "scale": 2,
             "selectedLayer": 1,
@@ -81,8 +84,8 @@
             "scale": 1,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 515,
-                "y": 877.5
+                "x": 959.5,
+                "y": 639.5
             }
         },
         "assets/scene_maps/town.tmj#canal": {
@@ -151,7 +154,7 @@
     },
     "last.exportedFilePath": "/home/WORK/projects/gameoff_2025/assets/scene_maps",
     "last.externalTilesetPath": "/home/WORK/projects/gameoff_2025/assets/tilesets/dungeon_walls",
-    "last.imagePath": "/home/WORK/projects/gameoff_2025/assets/tilesets/floor_textures",
+    "last.imagePath": "/home/WORK/projects/gameoff_2025/assets/tilesets/dungeon_walls",
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "json",
     "map.tileHeight": 128,
@@ -163,9 +166,9 @@
     ],
     "project": "the_scavenger.tiled-project",
     "recentFiles": [
-        "assets/scene_maps/player_cabin.tmj",
         "assets/scene_maps/hall_of_elders.tmj",
         "assets/scene_maps/town.tmj",
+        "assets/scene_maps/player_cabin.tmj",
         "assets/scene_maps/town.tmx",
         "assets/tilesets/floor_textures/grass.tsx",
         "assets/tilesets/dungeon_walls/stone_and_iron_v2.tsx",

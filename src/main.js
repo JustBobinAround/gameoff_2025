@@ -23,7 +23,7 @@ const config = {
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH
     },
-    maxLights: 15,
+    maxLights: 14,
     pixelArt: true,
     scene: [
         Boot,
