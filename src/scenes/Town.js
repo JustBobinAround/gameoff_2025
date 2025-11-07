@@ -6,6 +6,16 @@ export class Town extends Scene {
         super('Town');
     }
 
+    init(params) {
+      if(params.from=='HallOfElders') {
+        this.player_start_x = 14*64;
+        this.player_start_y = 64;
+      } else {
+        this.player_start_x = 14*64;
+        this.player_start_y = 9*128;
+      }
+    }
+
     preload() {
       this.load.image("canals", "./assets/tilesets/city_walls/canal.png");
       this.load.image("cabins", "./assets/tilesets/city_walls/player_cabin_exterior.png");
@@ -37,7 +47,7 @@ export class Town extends Scene {
       layer3.setPipeline('Light2D');
       layer4.setPipeline('Light2D');
       
-      this.player = new Player(this, 5*64, 5*128);
+      this.player = new Player(this, this.player_start_x, this.player_start_y);
 
       this.cursors = this.input.keyboard.createCursorKeys();
       this.wasd = {
@@ -49,14 +59,20 @@ export class Town extends Scene {
       this.cameras.main.startFollow(this.player);
     }
 
-    check_exit_bounds(y) {
-      return y<64;
+    should_enter_hall_of_elders(y) {
+      return y<32;
+    }
+
+    should_enter_player_housing(y) {
+      return y>((10*128)-64)
     }
     
     update(time) {
       this.player.update(this, this.grid_map, this.paths);
-      if(this.check_exit_bounds(this.player.y)) {
+      if(this.should_enter_hall_of_elders(this.player.y)) {
         this.scene.start('HallOfElders');
+      } else if(this.should_enter_player_housing(this.player.y)) {
+        this.scene.start('PlayersHouse', {from: 'Town'});
       }
     }
 }

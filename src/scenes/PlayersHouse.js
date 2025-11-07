@@ -6,6 +6,16 @@ export class PlayersHouse extends Scene {
         super('PlayersHouse');
     }
 
+    init(params) {
+      if(params.from=='Town') {
+        this.player_start_x = (9*64)+32;
+        this.player_start_y = 64;
+      } else {
+        this.player_start_x = 5*64;
+        this.player_start_y = 8*128;
+      }
+    }
+
     preload() {
       this.load.image("cabin_walls", "./assets/tilesets/dungeon_walls/stone_and_iron_v2.png");
       this.load.image("cabin_floors", "./assets/tilesets/floor_textures/hall_of_elders_floor.png");
@@ -24,7 +34,7 @@ export class PlayersHouse extends Scene {
       layer1.setPipeline('Light2D');
       layer2.setPipeline('Light2D');
       
-      this.player = new Player(this, 0, 0);
+      this.player = new Player(this, this.player_start_x, this.player_start_y);
 
       this.cursors = this.input.keyboard.createCursorKeys();
       this.wasd = {
@@ -37,13 +47,13 @@ export class PlayersHouse extends Scene {
     }
 
     check_exit_bounds(y) {
-      return y>820;
+      return y<32;
     }
     
     update(time) {
       this.player.update(this, this.grid_map, this.paths);
       if(this.check_exit_bounds(this.player.y)) {
-        this.scene.start('Town');
+        this.scene.start('Town', {from: 'PlayerHouse'});
       }
     }
 }

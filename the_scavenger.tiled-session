@@ -26,10 +26,10 @@
         },
         "assets/scene_maps/hall_of_elders.tmj": {
             "scale": 1,
-            "selectedLayer": 2,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 795,
-                "y": 927.5
+                "x": 785,
+                "y": 1625.5
             }
         },
         "assets/scene_maps/hall_of_elders.tmj#church_pew": {
@@ -48,12 +48,15 @@
             "scaleInDock": 1
         },
         "assets/scene_maps/player_cabin.tmj": {
-            "scale": 2,
+            "scale": 1,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 256,
-                "y": 357.75
+                "x": 650,
+                "y": 583.5
             }
+        },
+        "assets/scene_maps/player_cabin.tmj#hall_of_elders_floor": {
+            "scaleInDock": 1
         },
         "assets/scene_maps/player_cabin.tmj#player_cabin": {
             "scaleInDock": 1,
@@ -62,6 +65,9 @@
         "assets/scene_maps/player_cabin.tmj#player_cabin_walls": {
             "scaleInDock": 1,
             "scaleInEditor": 1
+        },
+        "assets/scene_maps/player_cabin.tmj#stone_and_iron_v2": {
+            "scaleInDock": 1
         },
         "assets/scene_maps/player_cabin.tmx": {
             "scale": 2,
@@ -75,8 +81,8 @@
             "scale": 1,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1061,
-                "y": 613.5
+                "x": 515,
+                "y": 877.5
             }
         },
         "assets/scene_maps/town.tmj#canal": {
