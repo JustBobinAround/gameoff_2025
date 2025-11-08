@@ -16,8 +16,7 @@ export class Town extends Scene {
       }
     }
 
-    preload() {
-    }
+    preload() { }
 
     place_flame(x,y) {
         this.add.particles(x, y, 'flares',

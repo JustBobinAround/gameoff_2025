@@ -77,7 +77,7 @@ export class HallOfElders extends Scene {
       layer5.setPipeline('Light2D');
       
       this.add_lights();
-      this.player = new Player(this, 14*64, 12*128);
+      this.player = new Player(this, 896, 1536);
 
       this.cursors = this.input.keyboard.createCursorKeys();
       this.wasd = {
@@ -93,7 +93,7 @@ export class HallOfElders extends Scene {
     }
 
     should_return_to_town(y) {
-      return y>14*128;
+      return y>1792;
     }
     
     update(time) {

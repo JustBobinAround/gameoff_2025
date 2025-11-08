@@ -9,6 +9,7 @@ import { PlayersHouse } from './scenes/PlayersHouse.js';
 import { Preloader } from './scenes/Preloader.js';
 import { Town } from './scenes/Town.js';
 import { HallOfElders } from './scenes/HallOfElders.js';
+import { SpriteTester } from './scenes/SpriteTester.js';
 import { SmokeColorPipeline } from './shaders/Smoke.js';
 
 //  Find out more information about the Game Config at:
@@ -33,6 +34,7 @@ const config = {
         Town,
         HallOfElders,
         DungeonGameLoop,
+        SpriteTester,
         GameOver,
     ],
     physics: {

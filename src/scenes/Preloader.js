@@ -41,15 +41,46 @@ export class Preloader extends Scene {
         this.load.tilemapTiledJSON('map', './assets/scene_maps/player_cabin.tmj');
         this.load.tilemapTiledJSON('hall_of_elders', './assets/scene_maps/hall_of_elders.tmj');
         this.load.tilemapTiledJSON('town_map', './assets/scene_maps/town.tmj');
+
+        //SPRITES
+        this.load.spritesheet('test_sprite', './assets/sprites/animation_template.png', { frameWidth: 64, frameHeight: 128 });
+
         
         this.load.setPath('assets');
     }
 
     create () {
+        //ANIMATIONS
+        this.anims.create({
+            key: 'idle-left',
+            frames: this.anims.generateFrameNumbers('test_sprite', { frames: [ 12 ] }),
+            frameRate: 16,
+            repeat: -1
+        });
+        
+        this.anims.create({
+            key: 'idle-right',
+            frames: this.anims.generateFrameNumbers('test_sprite', { frames: [ 13 ] }),
+            frameRate: 16,
+            repeat: -1
+        });
+        
+        this.anims.create({
+            key: 'run-left',
+            frames: this.anims.generateFrameNumbers('test_sprite', { frames: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ] }),
+            frameRate: 16,
+            repeat: -1
+        });
+        this.anims.create({
+            key: 'run-right',
+            frames: this.anims.generateFrameNumbers('test_sprite', { frames: [ 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14] }),
+            frameRate: 16,
+            repeat: -1
+        });
         //  When all the assets have loaded, it's often worth creating global objects here that the rest of the game can use.
         //  For example, you can define global animations here, so we can use them in other scenes.
 
         //  Move to the MainMenu. You could also swap this for a Scene Transition, such as a camera fade.
-        this.scene.start('MainMenu');
+        this.scene.start('PlayersHouse');
     }
 }
