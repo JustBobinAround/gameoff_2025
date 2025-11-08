@@ -43,13 +43,15 @@ export class Entity extends GameObjects.Container {
       } else if(this.was_moving_right){
         this.sprite.play('idle-right', true);
       } else if(this.was_moving_up) {
-        this.sprite.play('idle-right', true);
+        this.sprite.play('idle-backward', true);
       } else if(this.was_moving_down) {
-        this.sprite.play('idle-right', true);
+        this.sprite.play('idle-forward', true);
       }
 
       this.was_moving_left = false;
       this.was_moving_right = false;
+      this.was_moving_down = false;
+      this.was_moving_up = false;
     }
 
     move_left(scalar=1) {
@@ -69,13 +71,25 @@ export class Entity extends GameObjects.Container {
     move_up(scalar=1) {
         this.was_moving_up = true;
         this.thrustLeft(this.speed*(scalar+this.current_dash_amount));
-        this.sprite.play('run-right', true);
+        if(this.was_moving_right) {
+          this.sprite.play('run-right', true);
+        }else if(this.was_moving_left) {
+          this.sprite.play('run-left', true);
+        } else {
+          this.sprite.play('run-backward', true);
+        }
     }
     
     move_down(scalar=1) {
         this.was_moving_down = true;
         this.thrustRight(this.speed*(scalar+this.current_dash_amount));
-        this.sprite.play('run-right', true);
+        if(this.was_moving_right) {
+          this.sprite.play('run-right', true);
+        }else if(this.was_moving_left) {
+          this.sprite.play('run-left', true);
+        } else {
+          this.sprite.play('run-forward', true);
+        }
     }
 
     set_goto_cord(cord) {
