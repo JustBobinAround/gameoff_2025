@@ -7,12 +7,6 @@ export class HallOfElders extends Scene {
     }
 
     preload() {
-      this.load.image("church_props", "./assets/tilesets/props/church_props.png");
-      this.load.image("church_walls", "./assets/tilesets/dungeon_walls/stone_and_iron_v2.png");
-      this.load.image("hall_of_elders_floor", "./assets/tilesets/floor_textures/hall_of_elders_floor.png");
-      this.load.image("torches", "./assets/tilesets/dungeon_walls/torches.png");
-      this.load.atlas('flares', './assets/particles/flares.png', './assets/particles/flares.json');
-      this.load.tilemapTiledJSON('hall_of_elders', './assets/scene_maps/hall_of_elders.tmj');
     }
 
     place_flame(x,y) {
@@ -57,7 +51,7 @@ export class HallOfElders extends Scene {
     create() {
       const map = this.make.tilemap({ key: 'hall_of_elders' });
       const floor_tiles = map.addTilesetImage('hall_of_elders_floor', 'hall_of_elders_floor');
-      const wall_tiles = map.addTilesetImage('stone_and_iron_v2', 'church_walls');
+      const wall_tiles = map.addTilesetImage('stone_and_iron_v2', 'dungeon_walls');
       const torch_tiles = map.addTilesetImage('torches', 'torches');
       const prop_tiles = map.addTilesetImage('church_props', 'church_props');
       
@@ -67,6 +61,13 @@ export class HallOfElders extends Scene {
       const layer3 = map.createLayer(3, wall_tiles, 0, 64); //makes depth with optical illusion
       const layer4 = map.createLayer(4, prop_tiles, 0, 0);
       const layer5 = map.createLayer(5, wall_tiles, 0, 64);
+      
+      layer1.setCollisionByExclusion([12, 6]);
+      this.matter.world.convertTilemapLayer(layer1);
+      layer4.setCollisionByExclusion([12, 6]);
+      this.matter.world.convertTilemapLayer(layer4);
+      layer5.setCollisionByExclusion([12, 6]);
+      this.matter.world.convertTilemapLayer(layer5);
       
       layer0.setPipeline('Light2D');
       layer1.setPipeline('Light2D');

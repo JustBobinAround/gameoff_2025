@@ -17,15 +17,6 @@ export class Town extends Scene {
     }
 
     preload() {
-      this.load.image("canals", "./assets/tilesets/city_walls/canal.png");
-      this.load.image("cabins", "./assets/tilesets/city_walls/player_cabin_exterior.png");
-      this.load.image("town_walls", "./assets/tilesets/dungeon_walls/stone_and_iron_v2.png");
-      this.load.image("torches", "./assets/tilesets/dungeon_walls/torches.png");
-      this.load.image("grass", "./assets/tilesets/floor_textures/grass.png");
-      this.load.image("dirt", "./assets/tilesets/floor_textures/dirt.png");
-      this.load.image("player_cabin_exterior", "./assets/tilesets/city_walls/player_cabin_exterior.png");
-      this.load.atlas('flares', './assets/particles/flares.png', './assets/particles/flares.json');
-      this.load.tilemapTiledJSON('town_map', './assets/scene_maps/town.tmj');
     }
 
     place_flame(x,y) {
@@ -51,10 +42,10 @@ export class Town extends Scene {
 
     add_lights() {
       var light_cords = [
-        { x: 866.8906478386682, y: 1088.9326230423305 },
-        { x: 1116.7229984726332, y: 1099.794957976071 },
-        { x: 1134.7761617274227, y: 183.75234834046745 },
-        { x: 847.6238775882631, y: 184.7398333344293 },
+        { x: 866.8906478386682, y: 1216.9326230423305},
+        { x: 1116.7229984726332, y: 1227.794957976071},
+        { x: 1134.7761617274227, y: 311.75234834046745},
+        { x: 847.6238775882631, y: 312.7398333344293},
       ];
       for(var idx in light_cords) {
         this.place_light(light_cords[idx].x, light_cords[idx].y);
@@ -64,10 +55,10 @@ export class Town extends Scene {
     create() {
       const map = this.make.tilemap({ key: 'town_map' });
       
+      //TODO: why is canal_tiles broke?
       const canal_tiles = map.addTilesetImage('canal', 'canals');
-      const town_wall_tiles= map.addTilesetImage('stone_and_iron_v2', 'town_walls');
+      const town_wall_tiles= map.addTilesetImage('stone_and_iron_v2', 'dungeon_walls');
       const torch_tiles = map.addTilesetImage('torches', 'torches');
-      const cabin_tiles = map.addTilesetImage('player_cabin_exterior', 'player_cabin_exterior');
       const grass_tiles = map.addTilesetImage('grass', 'grass');
       const dirt_tiles = map.addTilesetImage('dirt', 'dirt');
       
@@ -75,8 +66,14 @@ export class Town extends Scene {
       const layer1 = map.createLayer(1, grass_tiles, 0, 0);
       const layer2 = map.createLayer(2, town_wall_tiles, 0, 0);
       const layer3 = map.createLayer(3, torch_tiles, 0, 0);
-      const layer4 = map.createLayer(4, cabin_tiles, 0, 0);
+      const layer4 = map.createLayer(4, town_wall_tiles, 0, 64);
       const layer5 = map.createLayer(5, canal_tiles, 0, 0);
+      
+      // layer2.setCollisionByProperty({collides: true});
+      layer2.setCollisionByExclusion([12, 6]);
+      this.matter.world.convertTilemapLayer(layer2);
+      layer5.setCollisionByExclusion([12, 6]);
+      this.matter.world.convertTilemapLayer(layer5);
 
       layer0.setPipeline('Light2D');
       layer1.setPipeline('Light2D');

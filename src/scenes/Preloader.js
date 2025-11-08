@@ -7,7 +7,7 @@ export class Preloader extends Scene {
 
     init () {
         //  We loaded this image in our Boot Scene, so we can display it here
-        this.add.image(512, 384, 'background');
+        // this.add.image(512, 384, 'background');
 
         //  A simple progress bar. This is the outline of the bar.
         this.add.rectangle(512, 384, 468, 32).setStrokeStyle(1, 0xffffff);
@@ -25,7 +25,23 @@ export class Preloader extends Scene {
     }
 
     preload () {
-        //  Load the assets for the game - Replace with your own assets
+        //TILESETS
+        this.load.image("church_props", "./assets/tilesets/props/church_props.png");
+        this.load.image("dungeon_walls", "./assets/tilesets/dungeon_walls/stone_and_iron_v2.png");
+        this.load.image("hall_of_elders_floor", "./assets/tilesets/floor_textures/hall_of_elders_floor.png");
+        this.load.image("canals", "./assets/tilesets/city_walls/canal.png");
+        this.load.image("grass", "./assets/tilesets/floor_textures/grass.png");
+        this.load.image("dirt", "./assets/tilesets/floor_textures/dirt.png");
+        this.load.image("torches", "./assets/tilesets/dungeon_walls/torches.png");
+        
+        //PARTICLES
+        this.load.atlas('flares', './assets/particles/flares.png', './assets/particles/flares.json');
+        
+        //SCENE MAPS
+        this.load.tilemapTiledJSON('map', './assets/scene_maps/player_cabin.tmj');
+        this.load.tilemapTiledJSON('hall_of_elders', './assets/scene_maps/hall_of_elders.tmj');
+        this.load.tilemapTiledJSON('town_map', './assets/scene_maps/town.tmj');
+        
         this.load.setPath('assets');
     }
 
@@ -34,6 +50,6 @@ export class Preloader extends Scene {
         //  For example, you can define global animations here, so we can use them in other scenes.
 
         //  Move to the MainMenu. You could also swap this for a Scene Transition, such as a camera fade.
-        this.scene.start('PlayersHouse');
+        this.scene.start('MainMenu');
     }
 }
