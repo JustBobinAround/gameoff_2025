@@ -17,13 +17,7 @@ export class PlayersHouse extends Scene {
       }
     }
 
-    preload() {
-      this.load.image("cabin_walls", "./assets/tilesets/dungeon_walls/stone_and_iron_v2.png");
-      this.load.image("cabin_floors", "./assets/tilesets/floor_textures/hall_of_elders_floor.png");
-      this.load.image("torches", "./assets/tilesets/dungeon_walls/torches.png");
-      this.load.atlas('flares', './assets/particles/flares.png', './assets/particles/flares.json');
-      this.load.tilemapTiledJSON('map', './assets/scene_maps/player_cabin.tmj');
-    }
+    preload() { }
 
     place_flame(x,y) {
         this.add.particles(x, y, 'flares',
@@ -72,8 +66,8 @@ export class PlayersHouse extends Scene {
 
     create() {
       const map = this.make.tilemap({ key: 'map' });
-      const wall_tiles= map.addTilesetImage('stone_and_iron_v2', 'cabin_walls');
-      const floor_tiles = map.addTilesetImage('hall_of_elders_floor', 'cabin_floors');
+      const wall_tiles= map.addTilesetImage('stone_and_iron_v2', 'dungeon_walls');
+      const floor_tiles = map.addTilesetImage('hall_of_elders_floor', 'hall_of_elders_floor');
       const torch_tiles = map.addTilesetImage('torches', 'torches');
       
       const layer0 = map.createLayer(0, floor_tiles, 0, 0);
@@ -83,6 +77,9 @@ export class PlayersHouse extends Scene {
       
       layer0.setPipeline('Light2D');
       layer1.setPipeline('Light2D');
+      // layer1.setCollisionByProperty({collides: true});
+      layer1.setCollisionByExclusion([12, 6]);
+      this.matter.world.convertTilemapLayer(layer1);
       layer2.setPipeline('Light2D');
       layer3.setPipeline('Light2D');
       
