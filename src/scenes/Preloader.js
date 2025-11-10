@@ -34,6 +34,8 @@ export class Preloader extends Scene {
         this.load.image("dirt", "./assets/tilesets/floor_textures/dirt.png");
         this.load.image("torches", "./assets/tilesets/dungeon_walls/torches.png");
         
+        this.load.json("test_json", "./assets/items_list.json");
+        
         //PARTICLES
         this.load.atlas('flares', './assets/particles/flares.png', './assets/particles/flares.json');
         
@@ -43,7 +45,7 @@ export class Preloader extends Scene {
         this.load.tilemapTiledJSON('town_map', './assets/scene_maps/town.tmj');
 
         //SPRITES
-        this.load.spritesheet('test_sprite', './assets/sprites/animation_template.png', { frameWidth: 64, frameHeight: 128 });
+        this.load.spritesheet('test_sprite', './assets/sprites/default_character.png', { frameWidth: 64, frameHeight: 128 });
 
         
         this.load.setPath('assets');

@@ -26,7 +26,6 @@ export class Entity extends GameObjects.Container {
         this.goto_cord = false;
         this.current_dash_amount = 0;
         this.dash_deceleration = 0.1;
-        // this.level_stats = new EntityLevelStats(10,10,10,10);
         this.was_moving_left = false;
         this.was_moving_right = false;
         this.was_moving_up = false;
@@ -167,4 +166,73 @@ export class Entity extends GameObjects.Container {
         this.current_dash_amount -= this.dash_deceleration;
       }
     }
+}
+
+export class EntityStats {
+  constructor() {
+    this.default();
+  }
+
+  default() {
+    this.strength = 0.0;
+    this.endurance = 0.0;
+    this.dexterity = 0.0;
+    this.intelligence = 0.0;
+    this.vitality = 0.0;
+    this.magic = 0.0;
+    this.luck = 0.0;
+    this.level = 0.0;
+    this.gold = 0.0;
+    this.default_effects();
+  }
+
+  default_effects() {
+    this.attack = 0.0;
+    this.defence = 0.0;
+    this.knockback = 0.0;
+    this.rate_of_attack = 0.0;
+    this.range = 0.0;
+    this.critical_chance = 0.0;
+    this.critical_scalar = 0.0;
+    this.item_luck = 0.0;
+    this.mana_added = 0.0;
+    this.mana_regen = 0.0;
+    this.mana_consumption = 0.0;
+    this.stamina_added = 0.0;
+    this.stamina_regen = 0.0;
+    this.stamina_consumption = 0.0;
+    this.health_added = 0.0;
+    this.health_regen = 0.0;
+    this.health_consumption = 0.0;
+    this.character_speed = 0.0;
+  }
+
+  apply_item(item) {
+    var effects = item.effects;
+    this.attack += effects.attack;
+    this.defence += effects.defence;
+    this.knockback += effects.knockback;
+    this.rate_of_attack += effects.rate_of_attack;
+    this.range += effects.range;
+    this.critical_chance += effects.critical_chance;
+    this.critical_scalar += effects.critical_scalar;
+    this.item_luck += effects.item_luck;
+    this.mana_added += effects.mana_added;
+    this.mana_regen += effects.mana_regen;
+    this.mana_consumption += effects.mana_consumption;
+    this.stamina_added += effects.stamina_added;
+    this.stamina_regen += effects.stamina_regen;
+    this.stamina_consumption += effects.stamina_consumption;
+    this.health_added += effects.health_added;
+    this.health_regen += effects.health_regen;
+    this.health_consumption += effects.health_consumption
+    this.character_speed += effects.character_speed;
+  }
+
+  calc_player_stats(items_to_apply) {
+    this.default_effects();
+    for(var item_idx in items_to_apply) {
+      this.apply_item(items_to_apply[item_idx]);
+    }
+  }
 }
