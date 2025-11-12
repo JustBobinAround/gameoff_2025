@@ -1,4 +1,4 @@
-import { Entity } from '../../src/game_objects/entity.js';
+import { Entity } from '../../src/game_objects/Entity.js';
 // import { PlayerOverlay } from './src/ui_overlay.js';
 
 class Player extends Entity {

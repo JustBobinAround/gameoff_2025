@@ -1,5 +1,5 @@
 import { Scene, Geom, Tilemaps, Input } from 'phaser';
-import Player from '../game_objects/player.js';
+import Player from '../game_objects/Player.js';
 
 
 import { 

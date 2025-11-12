@@ -3,20 +3,20 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "assets/scene_maps/player_cabin.tmj",
+    "activeFile": "assets/scene_maps/hall_of_elders.tmj",
     "expandedProjectPaths": [
-        "assets/tilesets",
-        "assets",
-        "assets/tilesets/city_walls",
-        "assets/scene_maps",
         "assets/tilesets/dungeon_walls",
         "assets/tilesets/floor_textures",
-        "."
+        "assets/tilesets",
+        ".",
+        "assets",
+        "assets/scene_maps",
+        "assets/tilesets/city_walls"
     ],
     "fileStates": {
         "": {
             "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInEditor": 1.5
         },
         "assets/scene_maps/assets/tilesets/dungeon_walls/stone_and_iron_v2.tsx": {
             "scaleInDock": 1
@@ -26,10 +26,10 @@
         },
         "assets/scene_maps/hall_of_elders.tmj": {
             "scale": 1,
-            "selectedLayer": 3,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 900,
-                "y": 678.5
+                "x": 763,
+                "y": 1179.5
             }
         },
         "assets/scene_maps/hall_of_elders.tmj#church_pew": {
@@ -85,7 +85,7 @@
         },
         "assets/scene_maps/town.tmj": {
             "scale": 1,
-            "selectedLayer": 4,
+            "selectedLayer": -1,
             "viewCenter": {
                 "x": 1098,
                 "y": 209.5
@@ -172,9 +172,9 @@
     ],
     "project": "the_scavenger.tiled-project",
     "recentFiles": [
-        "assets/scene_maps/hall_of_elders.tmj",
-        "assets/scene_maps/town.tmj",
         "assets/scene_maps/player_cabin.tmj",
+        "assets/scene_maps/town.tmj",
+        "assets/scene_maps/hall_of_elders.tmj",
         "assets/scene_maps/town.tmx",
         "assets/tilesets/floor_textures/grass.tsx",
         "assets/tilesets/dungeon_walls/stone_and_iron_v2.tsx",

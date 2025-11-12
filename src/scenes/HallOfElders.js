@@ -1,5 +1,5 @@
 import { Scene } from 'phaser';
-import Player from '../game_objects/player.js';
+import Player from '../game_objects/Player.js';
 
 export class HallOfElders extends Scene {
     constructor() {
